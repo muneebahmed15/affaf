@@ -2,80 +2,49 @@
 
 :root {
   --font-size: 16px;
-  --background: #1a0810;
-  --foreground: #fce8ec;
-  --card: #2a0f1880;
-  --card-foreground: #fce8ec;
-  --popover: #220c16;
-  --popover-foreground: #fce8ec;
-  --primary: #e8325a;
-  --primary-foreground: #fff0f3;
-  --secondary: #3d1220;
-  --secondary-foreground: #fce8ec;
-  --muted: #2e0f1a;
-  --muted-foreground: #b87a8a;
-  --accent: #f2a0b2;
-  --accent-foreground: #1a0810;
-  --destructive: #d4183d;
-  --destructive-foreground: #ffffff;
-  --border: rgba(232, 50, 90, 0.15);
+
+  /* AFAFF Brand Palette */
+  --background: #FBF8F3;
+  --foreground: #2A2118;
+  --card: #F5F0E8;
+  --card-foreground: #2A2118;
+  --popover: #F5F0E8;
+  --popover-foreground: #2A2118;
+  --primary: #3D2E3A;
+  --primary-foreground: #FBF8F3;
+  --secondary: #EDE8D5;
+  --secondary-foreground: #2A2118;
+  --muted: #F0EAD6;
+  --muted-foreground: #8A7F75;
+  --accent: #3D2E3A;
+  --accent-foreground: #FBF8F3;
+  --destructive: #C0392B;
+  --destructive-foreground: #FBF8F3;
+  --border: rgba(61, 46, 58, 0.12);
   --input: transparent;
-  --input-background: #2e0f1a;
-  --switch-background: #5a1f30;
+  --input-background: #EDE8D5;
+  --switch-background: #C4B5A8;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #e8325a;
+  --ring: #3D2E3A;
+  --radius: 0.75rem;
+
+  /* Chart colors (unused but required) */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 1rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: #030213;
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  /* Sidebar (unused) */
+  --sidebar: #F5F0E8;
+  --sidebar-foreground: #2A2118;
+  --sidebar-primary: #3D2E3A;
+  --sidebar-primary-foreground: #FBF8F3;
+  --sidebar-accent: #EDE8D5;
+  --sidebar-accent-foreground: #2A2118;
+  --sidebar-border: rgba(61,46,58,0.12);
+  --sidebar-ring: #3D2E3A;
 }
 
 @theme inline {
@@ -128,54 +97,12 @@
     @apply bg-background text-foreground;
   }
 
-  /**
-  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
-  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
-  */
-
   html {
     font-size: var(--font-size);
   }
 
-  h1 {
-    font-size: var(--text-2xl);
+  h1, h2, h3, h4 {
     font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  h2 {
-    font-size: var(--text-xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  h3 {
-    font-size: var(--text-lg);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  h4 {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  label {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  button {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  input {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-normal);
-    line-height: 1.5;
+    line-height: 1.2;
   }
 }
