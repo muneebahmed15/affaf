@@ -227,7 +227,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (pw === "afaff2025") { onLogin(); }
+    if (pw === "Hellousa123@") { onLogin(); }
     else { setErr(true); setTimeout(() => setErr(false), 2000); }
   };
 
@@ -269,9 +269,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
               Sign In
             </button>
           </form>
-          <p style={{ fontSize: "0.72rem", color: A.muted, textAlign: "center", marginTop: 16 }}>
-            Hint: <code style={{ background: A.bg, padding: "1px 6px", borderRadius: 4 }}>afaff2025</code>
-          </p>
+          
         </Card>
       </div>
     </div>
